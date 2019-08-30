@@ -1,0 +1,24 @@
+{
+  "name": "intro-to-phaser",
+  "version": "1.0.0",
+  "description": "> This repo is me following along with a tutorial for writing a phaserJS multiplayer game.  link to guide I am following: https://gamedevacademy.org/create-a-basic-multiplayer-game-in-phaser-3-with-socket-io-part-1/",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zaiah11/intro-to-phaser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zaiah11/intro-to-phaser/issues"
+  },
+  "homepage": "https://github.com/Zaiah11/intro-to-phaser#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
