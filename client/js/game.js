@@ -24,7 +24,7 @@ function preload() {
 }
 
 function create() {
-
+  this.socket = io()
 }
 
 function update() {
