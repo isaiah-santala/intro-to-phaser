@@ -8,9 +8,9 @@ const players = {}
 
 app.use(express.static(__dirname + '/../client'))
 
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname, + '/../client/index.html')
-// })
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html')
+})
 
 io.on('connection', (socket) => {
   players[socket.id] = {
@@ -32,6 +32,16 @@ io.on('connection', (socket) => {
 
     console.log('user disconnect')
   })
+
+  socket.on('playerMovement', function (movementData) {
+    players[socket.id].x = movementData.x
+    players[socket.id].y = movementData.y
+    players[socket.id].rotation = movementData.rotation
+
+    socket.broadcast.emit('playerMoved', players[socket.id])
+  })
 })
+
+
 
 server.listen(port, () => console.log('... listening on port:' + server.address().port))
